@@ -22,7 +22,7 @@ SONAR-MINIKUBE-TERRAFORM/
 │   ├── terraform.tfstate.backup  # Backup of the state file (auto-generated)
 ├── .gitignore                # Excludes Terraform state and unnecessary files
 └── README.md                 # Project documentation (this file)
-
+```
 # ⚡ Prerequisites
 
 - Docker
@@ -45,8 +45,9 @@ Ensure your system meets the following requirements:
 
 ---
 
+```
 ## Usage:
-
+```
 ```
 ### Step 1: clone the repo
 ```bash
