@@ -72,7 +72,7 @@ Ensure your system meets the following requirements:
 
 ### Clone the Repository  
 ```sh
-git clone <repository-url>
+git clone [<repository-url>](https://github.com/srinidhi007/sonar-minikube-terraform.git)
 cd SONAR-MINIKUBE-TERRAFORM
 ### Step 1: Clone the Repository
 ```bash
