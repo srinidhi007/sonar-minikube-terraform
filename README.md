@@ -68,16 +68,13 @@ Ensure your system meets the following requirements:
 
 ---
 
-## 🚀 Usage
+### 🚀 Usage
 
-### Clone the Repository  
-```sh
+```
+### Step 1: clone the repo
+```bash
 git clone https://github.com/srinidhi007/sonar-minikube-terraform.git
 cd SONAR-MINIKUBE-TERRAFORM
-### Step 1: Clone the Repository
-```bash
-git clone <repository-url>
-cd <repository-folder>
 ```
 
 ### Step 2: Run the Setup script for environment
