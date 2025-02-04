@@ -97,6 +97,8 @@ sudo ./scripts/deploy.sh
 chmod +x ./scripts/cleanup.sh
 sudo ./scripts/cleanup.sh
 ```
+7. **Important!**
+   - For the sake of development purposes terraform.tfvars file is being comitted in the repo, But during Prod deployment the file has to be in remote location and accessed from there.
 ---
 ---
 
