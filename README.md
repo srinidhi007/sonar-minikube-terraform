@@ -45,7 +45,7 @@ Ensure your system meets the following requirements:
 
 ---
 
-### Usage
+## Usage:
 
 ```
 ### Step 1: clone the repo
