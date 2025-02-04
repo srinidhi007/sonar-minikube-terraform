@@ -1,18 +1,7 @@
 # 🚀 SonarQube Deployment with Minikube, Helm, and Terraform
 
-This project automates the deployment of **SonarQube** and **PostgreSQL** on a **Minikube** cluster using **Helm** and **Terraform**.
-
----
-
-## 🎯 Features
-
-✅ **Minikube Cluster Setup**  
-✅ **Helm-based Deployment of SonarQube & PostgreSQL**  
-✅ **Terraform-based Infrastructure Automation**  
-✅ **Ingress Configuration for External Access**  
-✅ **Automated Cleanup & Deployment Scripts**  
-
----
+This project automates the deployment of SonarQube and PostgreSQL on a Minikube cluster using Helm and Terraform. The entire setup is fully automated via Bash scripts, ensuring a seamless installation on a clean Ubuntu Server.
+As the Oteemo chart is depretiaceted (https://github.com/Oteemo/charts/tree/master/charts/sonarqube), I am suing official sonaqube helm chart from github: https://SonarSource.github.io/helm-chart-sonarqube
 
 ## 📁 Folder Structure
 
@@ -32,27 +21,15 @@ SONAR-MINIKUBE-TERRAFORM/
 │   ├── terraform.tfstate     # Terraform state file (auto-generated)
 │   ├── terraform.tfstate.backup  # Backup of the state file (auto-generated)
 ├── .gitignore                # Excludes Terraform state and unnecessary files
-├── minikube-url.log          # Stores Minikube IP for easy reference
 └── README.md                 # Project documentation (this file)
 
 # ⚡ Prerequisites
 
-Before running the scripts, ensure the following dependencies are installed:
-
-### 🐳 Docker  
-- **Install:** [Docker Installation Guide](https://docs.docker.com/engine/install/)
-
-### 🚀 Minikube  
-- **Install:** [Minikube Installation Guide](https://minikube.sigs.k8s.io/docs/start/)
-
-### ☸️ kubectl  
-- **Install:** [kubectl Installation Guide](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
-
-### 🎩 Helm  
-- **Install:** [Helm Installation Guide](https://helm.sh/docs/intro/install/)
-
-### 🌍 Terraform  
-- **Install:** [Terraform Installation Guide](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
+- Docker
+- Minikube
+- kubectl
+- Helm  
+- Terraform  
 
 ---
 
@@ -68,7 +45,7 @@ Ensure your system meets the following requirements:
 
 ---
 
-### 🚀 Usage
+### Usage
 
 ```
 ### Step 1: clone the repo
@@ -104,11 +81,28 @@ sudo ./scripts/deploy.sh
    - Initializes and applies the Terraform configuration in the `terraform-module` folder.
 
 4. **Verify Application**:
-   - The minikube-url.log file will store the service URL output..
-   - you can also see this at tail -f minikube-url.log
+   - After the succesfull deployment the link will be generated to access Sonarqube on your browser   
 
 5. **Access Sonarkube in browser from the link**:
    - The default credentials to log in are admin and admin, you can change the password to a more secure one
-   - 
 
+6. **Cleanup script to clear workspace (optional)**:
+   - The default credentials to log in are admin and admin, you can change the password to a more secure one
+   - run:
+```bash
+chmod +x ./scripts/deploy.sh
+sudo ./scripts/deploy.sh
+```
 ---
+---
+
+## Troubleshooting
+
+### Add Minikube IP and sonarqube.local to Hosts File
+To access SonarQube using a friendly domain name, add an entry to your `/etc/hosts` file:
+In case you are using wsl, you also need to add in windows: C:\Windows\System32\drivers\etc
+```bash
+MINIKUBE_IP=$(minikube ip)
+echo "$MINIKUBE_IP sonarqube.local" | sudo tee -a /etc/hosts
+```
+
