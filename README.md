@@ -65,6 +65,10 @@ sudo ./scripts/setup.sh
 chmod +x ./scripts/deploy.sh
 sudo ./scripts/deploy.sh
 ```
+
+### Step 4: Access Sonarkube in browser from the link generated
+- After the succesfull deployment the link will be generated in the terminal to access Sonarqube on your browser
+
 ---
 
 ## Script Workflow
@@ -90,8 +94,8 @@ sudo ./scripts/deploy.sh
    - The default credentials to log in are admin and admin, you can change the password to a more secure one
    - run:
 ```bash
-chmod +x ./scripts/deploy.sh
-sudo ./scripts/deploy.sh
+chmod +x ./scripts/cleanup.sh
+sudo ./scripts/cleanup.sh
 ```
 ---
 ---
