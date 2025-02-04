@@ -20,8 +20,6 @@ update_hosts() {
         echo "add $MINIKUBE_IP $HOSTNAME in C:\Windows\System32\drivers\etc\hosts"
     fi
 
-    # Print the final Minikube IP that was added
-    echo "🚀 SonarQube should be accessible at: http://$MINIKUBE_IP:31268"
 }
 
 # Function to configure and start Minikube with Docker driver
