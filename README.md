@@ -45,10 +45,9 @@ Ensure your system meets the following requirements:
 
 ---
 
-```
-## Usage:
-```
-```
+
+### Usage:
+
 ### Step 1: clone the repo
 ```bash
 git clone https://github.com/srinidhi007/sonar-minikube-terraform.git
